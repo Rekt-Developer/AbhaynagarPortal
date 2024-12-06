@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Allow: /news/
+
+Disallow: /assets/
+
+Sitemap: https://rekt-developer.github.io/abhaynagar-portal/sitemap.xml

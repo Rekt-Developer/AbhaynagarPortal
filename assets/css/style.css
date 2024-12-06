@@ -1,0 +1,92 @@
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom styles */
+body {
+    font-family: 'Inter', 'Kalpurush', sans-serif;
+}
+
+.font-bangla {
+    font-family: 'Kalpurush', sans-serif;
+}
+
+/* Hover effects */
+.hover-grow {
+    transition: transform 0.3s ease;
+}
+
+.hover-grow:hover {
+    transform: scale(1.05);
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Custom color scheme */
+.bg-abhaynagar-green {
+    background-color: #2C5F2D;
+}
+
+.text-abhaynagar-gold {
+    color: #FFD700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero {
+        height: 60vh;
+    }
+}
+
+/* Accessibility improvements */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Custom button styles */
+.btn-primary {
+    @apply bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition duration-300;
+}
+
+.btn-secondary {
+    @apply bg-white text-green-600 border border-green-600 px-4 py-2 rounded hover:bg-green-100 transition duration-300;
+}
+
+/* Dark mode styles */
+.dark {
+    @apply bg-gray-900 text-white;
+}
+
+.dark .bg-white {
+    @apply bg-gray-800;
+}
+
+.dark .text-gray-600 {
+    @apply text-gray-300;
+}
+
+.dark .bg-green-100 {
+    @apply bg-green-900;
+}
+
+.shadow-text {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+    

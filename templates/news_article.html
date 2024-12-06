@@ -1,0 +1,25 @@
+
+{% extends 'base.html' %}
+
+{% block title %}{{ title }} - Abhaynagar Portal{% endblock %}
+
+{% block content %}
+    <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
+        <h1 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">{{ title }}</h1>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">{{ date }}</p>
+        {% if image %}
+            <img src="{{ image }}" alt="{{ title }}" class="w-full h-64 object-cover rounded-lg mb-6">
+        {% endif %}
+        <div class="prose dark:prose-invert max-w-none">
+            {{ content | safe }}
+        </div>
+    </article>
+{% endblock %}
+
+{% block meta %}
+    <meta property="og:title" content="{{ title }} - Abhaynagar Portal">
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:image" content="{{ image }}">
+    <meta property="og:url" content="https://abhaynagar-portal.com{{ url }}">
+    <meta property="og:type" content="article">
+{% endblock %}

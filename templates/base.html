@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="{% block lang %}en{% endblock %}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Abhaynagar Portal{% endblock %}</title>
+    <meta name="description" content="{% block description %}A modern, SEO-optimized portal about Abhaynagar Upazila, Bangladesh{% endblock %}">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+    {% block meta %}{% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+<body class="flex flex-col min-h-screen bg-gray-100 dark:bg-gray-900" x-data="{ darkMode: false }" :class="{ 'dark': darkMode }">
+    <header class="bg-white dark:bg-gray-800 shadow-md">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <a href="/" class="text-2xl font-bold text-gray-800 dark:text-white">Abhaynagar Portal</a>
+                <div class="flex space-x-4">
+                    <a href="/" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">Home</a>
+                    <a href="/news" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">News</a>
+                    <button @click="darkMode = !darkMode" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
+                        <span x-show="!darkMode">🌙</span>
+                        <span x-show="darkMode">☀️</span>
+                    </button>
+                    <select id="language-selector" class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md text-gray-700 dark:text-gray-300">
+                        <option value="en">English</option>
+                        <option value="bn">বাংলা</option>
+                    </select>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow container mx-auto px-6 py-8">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="bg-white dark:bg-gray-800 shadow-md mt-12">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <p class="text-gray-600 dark:text-gray-400">&copy; 2023 Abhaynagar Portal</p>
+                <nav>
+                    <a href="/tos" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white ml-4">Terms of Service</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/script.js"></script>
+</body>
+</html>
